@@ -8,8 +8,8 @@ Vue.config.productionTip = false
 const store = {
   data: [
     {
-      expId: 1,
-      name: 'Word choice',
+      expId: 'word-1',
+      name: 'Word choice for button',
       status: 'ACTIVE',
       allocRate: 0.2,
       earnings: [
@@ -21,25 +21,41 @@ const store = {
           name: 'experiment',
           data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
         }
-      ]
+      ],
+      diff: "+0.52%",
+      b_allocations: 1023,
+      startDate: '10.03.2018',
+      endDate: ''
     },
     {
-      expId: 2,
-      name: 'Color',
-      status: 'DISABLED',
-      allocRate: 0.5
-    },
-    {
-      expId: 3,
-      name: 'Word choice II',
+      expId: 'word-2',
+      name: 'Word choice for button II',
       status: 'CANCELLED',
-      allocRate: 0.6
+      allocRate: 0.6,
+      diff: "-0.36%",
+      b_allocations: 2033,
+      startDate: '05.01.2018',
+      endDate: '12.08.2018'
     },
     {
-      expId: 4,
-      name: 'Alignment',
+      expId: 'color',
+      name: 'Color of button',
+      status: 'DISABLED',
+      allocRate: 0.5,
+      diff: "+0.52%",
+      b_allocations: 548,
+      startDate: '',
+      endDate: ''
+    },
+    {
+      expId: 'alignment',
+      name: 'Left or right-aligned text',
       status: 'INTEGRATED',
-      allocRate: 0.5
+      allocRate: 0.5,
+      diff: "-0.36%",
+      b_allocations: 128,
+      startDate: '12.11.2017',
+      endDate: '23.06.2018'
     },
   ]
 }
