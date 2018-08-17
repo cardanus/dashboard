@@ -12,7 +12,7 @@
         <tr v-for="item in store.data" :key="item.expId">
           <td>{{ item.expId }}</td>
           <td>{{ item.status }}</td>
-          <td>{{ item.allocRate * 10 }}%</td>
+          <td>{{ item.allocRate * 100 }}%</td>
         </tr>
       </tbody>
     </table>
