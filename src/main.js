@@ -18,7 +18,19 @@ const store = {
       name: 'Color',
       status: 'DISABLED',
       allocRate: 0.5
-    }
+    },
+    {
+      expId: 3,
+      name: 'Word choice II',
+      status: 'CANCELLED',
+      allocRate: 0.6
+    },
+    {
+      expId: 4,
+      name: 'Alignment',
+      status: 'INTEGRATED',
+      allocRate: 0.5
+    },
   ]
 }
 
