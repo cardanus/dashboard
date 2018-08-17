@@ -3,8 +3,10 @@
     <div class="row">
       <div class="col">
         <div class="info ml-5">
-          <h3>#{{ experiment.expId }}: {{ experiment.name }}</h3>
-          <b>Allocation rate:</b> {{ experiment.allocRate }}<br/>
+          <h3>#{{ experiment.expId }} ({{ experiment.name }})</h3>
+          <b>Allocation rate:</b> {{ experiment.allocRate * 100 }}% <br/>
+          <b>Revenue difference:</b> {{ experiment.diff }}<br/>
+          <b>Number of b-allocations:</b> {{ experiment.b_allocations }}<br/>
         </div>
       </div>
       <div class="col">
@@ -38,23 +40,26 @@
         return {
           chartOptions: {
             title: {
-              text: 'Earnings'
-            },
-            xAxis: {
-              categories: []
+              text: 'Experiment results'
             },
             yAxis: {
               title: {
-                text: 'Million Eur'
+                text: 'Revenue (million EUR)'
               }
+            },
+            xAxis: {
+              title: {
+                text: 'Time (days)'
+              },
+              categories: []
             },
             series: [
               {
-                name: 'default',
+                name: 'default (a)',
                 data: [22, 16, 18, 11, 7, 14, 9, 7, 4, 6]
               },
               {
-                name: 'experiment',
+                name: 'experiment (b)',
                 data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
               }
             ]

@@ -4,17 +4,21 @@
       <thead>
         <tr>
           <th>Experiment ID</th>
-          <th>Name</th>
+          <th>Description</th>
           <th>Status</th>
           <th>Allocation Rate</th>
+          <th>Start Date</th>
+          <th>End Date</th>
         </tr>
       </thead>
       <tbody>
           <tr class="item-row" v-for="item in store.data" :key="item.expId" v-on:click="clickList(item)">
-            <td><b>{{ item.expId }}</b></td>
+            <td>{{ item.expId }}</td>
             <td>{{ item.name }}</td>
             <td><span v-bind:class="getBadge(item.status)">{{ item.status }}</span></td>
             <td>{{ item.allocRate * 100 }}%</td>
+            <td>{{ item.startDate }}</td>
+            <td>{{ item.endDate }}</td>
           </tr>
       </tbody>
     </table>
