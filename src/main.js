@@ -19,7 +19,7 @@ const store = {
   ]
 }
 
-export { store };
+export { store, router };
 
 new Vue({
   router,

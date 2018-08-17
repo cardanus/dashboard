@@ -9,11 +9,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in store.data" :key="item.expId">
-          <td>{{ item.expId }}</td>
-          <td>{{ item.status }}</td>
-          <td>{{ item.allocRate * 10 }}%</td>
-        </tr>
+          <tr class="item-row" v-for="item in store.data" :key="item.expId" v-on:click="clickList(item)">
+            <td>{{ item.expId }}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.allocRate * 10 }}%</td>
+          </tr>
       </tbody>
     </table>
   </div>
@@ -23,7 +23,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 
-import { store } from '@/main'
+import { store, router } from '@/main'
 
 export default {
   name: 'home',
@@ -35,5 +35,17 @@ export default {
       store,
     };
   },
+  methods: {
+    clickList: item => {
+      const expId = item.expId
+      router.push({ name: 'about', params: { id: expId }})
+    }
+  }
 }
 </script>
+
+<style scoped>
+  .item-row:hover {
+    cursor: pointer;
+  }
+</style>
