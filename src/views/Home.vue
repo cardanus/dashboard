@@ -40,7 +40,7 @@ export default {
   methods: {
     clickList: item => {
       const expId = item.expId
-      router.push({ name: 'about', params: { id: expId }})
+      router.push({ name: 'experiment', params: { id: expId }})
     },
     getBadge: status => {
       const statuses = {

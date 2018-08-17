@@ -11,7 +11,17 @@ const store = {
       expId: 1,
       name: 'Word choice',
       status: 'ACTIVE',
-      allocRate: 0.2
+      allocRate: 0.2,
+      earnings: [
+        {
+          name: 'default',
+          data: [22, 16, 18, 11, 7, 14, 9, 7, 4, 6]
+        },
+        {
+          name: 'experiment',
+          data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
+        }
+      ]
     },
     {
       expId: 2,
