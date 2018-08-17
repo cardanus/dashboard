@@ -37,9 +37,27 @@
       data() {
         return {
           chartOptions: {
-            series: [{
-              data: [1,2,3] // sample data
-            }]
+            title: {
+              text: 'Earnings'
+            },
+            xAxis: {
+              categories: []
+            },
+            yAxis: {
+              title: {
+                text: 'Million Eur'
+              }
+            },
+            series: [
+              {
+                name: 'default',
+                data: [22, 16, 18, 11, 7, 14, 9, 7, 4, 6]
+              },
+              {
+                name: 'experiment',
+                data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
+              }
+            ]
           },
         }
       },
