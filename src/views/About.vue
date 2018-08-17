@@ -1,10 +1,27 @@
 <template>
   <div class="about mt-4">
-    <div class="info ml-5">
-      <h3>#{{ experiment.expId }}: {{ experiment.name }}</h3>
-      <b>Status:</b> <span v-bind:class="getBadge(experiment.status)">{{ experiment.status }}</span><br/>
-      <b>Allocation rate:</b> {{ experiment.allocRate }}<br/>
-      ...
+    <div class="row">
+      <div class="col">
+        <div class="info ml-5">
+          <h3>#{{ experiment.expId }}: {{ experiment.name }}</h3>
+          <b>Allocation rate:</b> {{ experiment.allocRate }}<br/>
+          ...
+        </div>
+      </div>
+      <div class="col">
+        <div class="dropdown float-right mr-4">
+          <b class="mr-2">Status: </b>
+          <button v-bind:class="getStatusButton(experiment.status)" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ experiment.status }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a id="active" class="dropdown-item" href="#">Active</a>
+            <a id="disabled" class="dropdown-item" href="#">Disabled</a>
+            <a id="cancelled" class="dropdown-item" href="#">Cancelled</a>
+            <a id="integrated" class="dropdown-item" href="#">Integrated</a>
+          </div>
+        </div>
+      </div>
     </div>
     <highcharts :options="chartOptions"></highcharts>
   </div>
@@ -29,25 +46,25 @@
       },
     computed: {
         experiment: function () {
-          return store.data.filter(item => item.expId = this.$route.params.id)[0]
+          return store.data.filter(item => item.expId === this.$route.params.id)[0]
         }
     },
     methods: {
-      getBadge: status => {
+      getStatusButton: status => {
         const statuses = {
           'ACTIVE': 'success',
           'DISABLED': 'secondary',
           'CANCELLED': 'danger',
           'INTEGRATED': 'primary'
         }
-        return `ml-2 badge badge-${statuses[status]}`
+        return `btn btn-${statuses[status]} dropdown-toggle`
       }
     }
   }
 </script>
 
 <style scoped>
-.info {
-  text-align: left;
-}
+  .info {
+    text-align: left;
+  }
 </style>
