@@ -4,6 +4,7 @@
       <thead>
         <tr>
           <th>Experiment ID</th>
+          <th>Name</th>
           <th>Status</th>
           <th>Allocation Rate</th>
         </tr>
@@ -11,6 +12,7 @@
       <tbody>
           <tr class="item-row" v-for="item in store.data" :key="item.expId" v-on:click="clickList(item)">
             <td>{{ item.expId }}</td>
+            <td>{{ item.name }}</td>
             <td>{{ item.status }}</td>
             <td>{{ item.allocRate * 100 }}%</td>
           </tr>
