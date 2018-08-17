@@ -5,7 +5,6 @@
         <div class="info ml-5">
           <h3>#{{ experiment.expId }}: {{ experiment.name }}</h3>
           <b>Allocation rate:</b> {{ experiment.allocRate }}<br/>
-          ...
         </div>
       </div>
       <div class="col">
