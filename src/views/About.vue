@@ -2,7 +2,7 @@
   <div class="about mt-4">
     <div class="info ml-5">
       <h3>#{{ experiment.expId }}: {{ experiment.name }}</h3>
-      <b>Status:</b> {{ experiment.status }}<br/>
+      <b>Status:</b> <span v-bind:class="getBadge(experiment.status)">{{ experiment.status }}</span><br/>
       <b>Allocation rate:</b> {{ experiment.allocRate }}<br/>
       ...
     </div>
@@ -27,13 +27,21 @@
           },
         }
       },
-    mounted() {
-        console.log(this.$route.params.id)
-    },
     computed: {
         experiment: function () {
           return store.data.filter(item => item.expId = this.$route.params.id)[0]
         }
+    },
+    methods: {
+      getBadge: status => {
+        const statuses = {
+          'ACTIVE': 'success',
+          'DISABLED': 'secondary',
+          'CANCELLED': 'danger',
+          'INTEGRATED': 'primary'
+        }
+        return `ml-2 badge badge-${statuses[status]}`
+      }
     }
   }
 </script>

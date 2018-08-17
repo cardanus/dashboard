@@ -13,7 +13,7 @@
           <tr class="item-row" v-for="item in store.data" :key="item.expId" v-on:click="clickList(item)">
             <td>{{ item.expId }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.status }}</td>
+            <td><span v-bind:class="getBadge(item.status)">{{ item.status }}</span></td>
             <td>{{ item.allocRate * 100 }}%</td>
           </tr>
       </tbody>
@@ -41,6 +41,15 @@ export default {
     clickList: item => {
       const expId = item.expId
       router.push({ name: 'about', params: { id: expId }})
+    },
+    getBadge: status => {
+      const statuses = {
+        'ACTIVE': 'success',
+        'DISABLED': 'secondary',
+        'CANCELLED': 'danger',
+        'INTEGRATED': 'primary'
+      }
+      return `badge badge-${statuses[status]}`
     }
   }
 }
