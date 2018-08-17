@@ -11,7 +11,7 @@
       </thead>
       <tbody>
           <tr class="item-row" v-for="item in store.data" :key="item.expId" v-on:click="clickList(item)">
-            <td>{{ item.expId }}</td>
+            <td><b>{{ item.expId }}</b></td>
             <td>{{ item.name }}</td>
             <td><span v-bind:class="getBadge(item.status)">{{ item.status }}</span></td>
             <td>{{ item.allocRate * 100 }}%</td>
