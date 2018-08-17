@@ -9,11 +9,13 @@ const store = {
   data: [
     {
       expId: 1,
+      name: 'Word choice',
       status: 'ACTIVE',
       allocRate: 0.2
     },
     {
       expId: 2,
+      name: 'Color',
       status: 'DISABLED',
       allocRate: 0.5
     }
