@@ -53,16 +53,7 @@
               },
               categories: []
             },
-            series: [
-              {
-                name: 'default (a)',
-                data: [22, 16, 18, 11, 7, 14, 9, 7, 4, 6]
-              },
-              {
-                name: 'experiment (b)',
-                data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
-              }
-            ]
+            series: []
           },
         }
       },
@@ -81,6 +72,9 @@
         }
         return `btn btn-${statuses[status]} dropdown-toggle`
       }
+    },
+    created() {
+        this.chartOptions.series = this.experiment.earnings;
     }
   }
 </script>

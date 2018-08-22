@@ -32,6 +32,16 @@ const store = {
       name: 'Word choice for button II',
       status: 'CANCELLED',
       allocRate: 0.6,
+        earnings: [
+            {
+                name: 'default',
+                data: [22, 16, 18, 11, 7, 14, 9, 7, 4, 6]
+            },
+            {
+                name: 'experiment',
+                data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
+            }
+        ],
       diff: "-0.36%",
       b_allocations: 2033,
       startDate: '05.01.2018',
@@ -42,6 +52,16 @@ const store = {
       name: 'Color of button',
       status: 'DISABLED',
       allocRate: 0.5,
+        earnings: [
+            {
+                name: 'default',
+                data: [22, 16, 18, 11, 7, 14, 9, 7, 4, 6]
+            },
+            {
+                name: 'experiment',
+                data: [4, 3, 8, 15, 12, 14, 17, 22, 20, 25]
+            }
+        ],
       diff: "+0.52%",
       b_allocations: 548,
       startDate: '',
@@ -52,6 +72,16 @@ const store = {
       name: 'Left or right-aligned text',
       status: 'INTEGRATED',
       allocRate: 0.5,
+        earnings: [
+            {
+                name: 'default',
+                data: [27, 16, 15, 11, 7, 14, 9, 7, 4, 6]
+            },
+            {
+                name: 'experiment',
+                data: [2, 1, 6, 9, 12, 10, 17, 22, 20, 25]
+            }
+        ],
       diff: "-0.36%",
       b_allocations: 128,
       startDate: '12.11.2017',
